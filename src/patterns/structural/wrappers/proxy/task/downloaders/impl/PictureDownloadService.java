@@ -23,7 +23,7 @@ public class PictureDownloadService {
 
             URL url = new URL(path);
 
-            Path outputPath = Paths.get("src/patterns/wrappers/proxy/pictures/" + filename);
+            Path outputPath = Paths.get("src/patterns/structural/wrappers/proxy/pictures/" + filename);
 
             InputStream in = url.openStream();
 

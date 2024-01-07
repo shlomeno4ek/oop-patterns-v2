@@ -1,7 +1,7 @@
 package patterns.behavioral.pubsub.task;
 
-import patterns.behavioral.pubsub.solution.impl.event.Video;
 import patterns.behavioral.pubsub.task.pubsub.Subscriber;
+import patterns.behavioral.pubsub.task.pubsub.Video;
 import patterns.behavioral.pubsub.task.pubsub.VideoChannel;
 
 import java.time.LocalDateTime;
@@ -20,7 +20,7 @@ public class RunPubSub {
 
         VideoChannel channel = new VideoChannel();
 
-        Video bandsOfNewYork = new patterns.behavioral.pubsub.solution.impl.event.Video(LocalDateTime.of(
+        Video bandsOfNewYork = new Video(LocalDateTime.of(
                 2023, 6, 12, 2, 0), "Bands of NewYork", 49
         );
 

@@ -71,4 +71,21 @@ public class Characteristic {
     public String getWheel() {
         return wheel;
     }
+
+    @Override
+    public String toString() {
+        return "[" +
+                "brand='" + brand + '\'' +
+                ", color='" + color + '\'' +
+                ", ram='" + ram + '\'' +
+                ", cpu='" + cpu + '\'' +
+                ", os='" + os + '\'' +
+                ", weight='" + weight + '\'' +
+                ", memory='" + memory + '\'' +
+                ", memoryType='" + memoryType + '\'' +
+                ", battery='" + battery + '\'' +
+                ", body='" + body + '\'' +
+                ", wheel='" + wheel + '\'' +
+                ']';
+    }
 }
