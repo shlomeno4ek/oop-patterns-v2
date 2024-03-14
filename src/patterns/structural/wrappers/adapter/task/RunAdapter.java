@@ -1,6 +1,8 @@
 package patterns.structural.wrappers.adapter.task;
+import patterns.structural.wrappers.adapter.task.converter.xml.XMLConverter;
 import patterns.structural.wrappers.adapter.task.mapper.Mapper;
 import patterns.structural.wrappers.adapter.task.mapper.json.JsonMapper;
+import patterns.structural.wrappers.adapter.task.mapper.xml.XMLadapter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +22,7 @@ public class RunAdapter {
         FileSaver jsonSaver = new FileSaver(jsonMapper);
         jsonSaver.save("test.json", map);
 
-        Mapper xmlMapper = null;
+        Mapper xmlMapper = new XMLadapter(new XMLConverter());
         FileSaver xmlSaver = new FileSaver(xmlMapper);
         xmlSaver.save("test.xml", map);
     }

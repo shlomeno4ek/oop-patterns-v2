@@ -14,4 +14,9 @@ public class Bike extends Item {
     public Characteristic getCharacteristic() {
         return characteristic;
     }
+
+    @Override
+    public String toString() {
+        return characteristic.toString();
+    }
 }

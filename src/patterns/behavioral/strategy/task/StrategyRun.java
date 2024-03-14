@@ -1,5 +1,7 @@
 package patterns.behavioral.strategy.task;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -10,31 +12,17 @@ public class StrategyRun {
         System.out.println(calculate());
     }
 
+    static Map<String, Operations> operations = new HashMap<>();
+    static {
+        operations.put("+", Double::sum);
+        operations.put("*", (a, b) -> a * b);
+    }
     private static double calculate() {
         double operand1 = Double.parseDouble(prompt("Enter first number: "));
         String operator = prompt("Enter math operation (+ / - *): ");
         double operand2 = Double.parseDouble(prompt("Enter second number: "));
-        double result;
 
-        if (operator.equals("+")) {
-            result = operand1 + operand2;
-        }
-
-        else if (operator.equals("-")) {
-            result = operand1 - operand2;
-        }
-
-        else if (operator.equals("*")) {
-            result = operand1 * operand2;
-        }
-
-        else if (operator.equals("/")) {
-            result = operand1 / operand2;
-        }
-
-        else throw new RuntimeException("Unsupported math operation");
-
-        return result;
+        return operations.get(operator).calculate(operand1, operand2);
     }
 
     private static String prompt(String message) {

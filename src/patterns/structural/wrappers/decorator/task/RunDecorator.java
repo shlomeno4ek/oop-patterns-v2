@@ -1,5 +1,7 @@
 package patterns.structural.wrappers.decorator.task;
 
+import patterns.structural.wrappers.decorator.solution.impl.ConsoleLogger;
+import patterns.structural.wrappers.decorator.solution.impl.LoggedCalculator;
 import patterns.structural.wrappers.decorator.task.impl.Calculator;
 
 /**
@@ -8,7 +10,7 @@ import patterns.structural.wrappers.decorator.task.impl.Calculator;
  */
 public class RunDecorator {
     public static void main(String[] args) {
-        View view = new View(new Calculator());
+        View view = new View(new LoggedCalculator(new Calculator(), new ConsoleLogger()));
         view.run();
     }
 }

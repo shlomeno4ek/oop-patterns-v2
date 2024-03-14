@@ -30,5 +30,11 @@ public class RunPubSub {
 
         Subscriber s1 = new Subscriber("Bob");
         Subscriber s2 = new Subscriber("Jack");
+
+        channel.registerSubscriber(s1);
+        channel.addVideo(santaBarbara);
+        channel.registerSubscriber(s2);
+        channel.addVideo(bandsOfNewYork);
+
     }
 }
